@@ -116,24 +116,6 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
     const [isSubMaskLoaded, setSubMaskLoaded] = useState(false)
     const [isSceneLoad, setSceneLoad] = useState(false)
 
-    useEffect(() => {
-
-
-
-
-
-        // setTimeout(() => {
-        //     showIndividualImage()
-        // }, 1000);
-
-        return () => {
-            currentMaskNum = 0;
-            subMaskNum = 0
-        }
-
-    }, [])
-
-
     React.useImperativeHandle(ref, () => ({
         sceneLoad: () => {
             setSceneLoad(true)

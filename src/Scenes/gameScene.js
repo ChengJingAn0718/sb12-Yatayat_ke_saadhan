@@ -206,8 +206,6 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
 
             case SIGNALLIST.increaseMark:
                 starRefs[totalStep].current.setClass('show')
-                audioList.tingAudio.currentTime = 0
-                audioList.tingAudio.play().catch(error => { })
                 totalStep++;
                 break;
 

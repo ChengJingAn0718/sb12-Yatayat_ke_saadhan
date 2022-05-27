@@ -86,7 +86,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
             setSceneLoad(true)
         },
         sceneStart: () => {
-            timerList[0] = setTimeout(activeBtnFunc, 5000);
+            timerList[0] = setTimeout(activeBtnFunc, 2500);
 
             setRepeatType(2)
 
@@ -290,6 +290,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
                     }}
                 >
 
+                    <BaseImage url='bg/green_bg.png' />
                     <div
                         style={{
                             position: "fixed", width: _geo.width * 0.5 + "px",

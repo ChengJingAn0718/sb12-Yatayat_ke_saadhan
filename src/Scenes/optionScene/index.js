@@ -118,6 +118,7 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
         audioList.bodyAudio1.pause()
         audioList.bodyAudio2.pause()
 
+        audioList.buzzAudio.pause();
 
         timerList.map(timer => clearTimeout(timer))
 
@@ -255,10 +256,11 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
             correctNum++
             audioList.tingAudio.play();
 
-            console.log(answerList)
 
             if (correctNum == answerList.length) {
-                goNextStep()
+                setTimeout(() => {
+                    goNextStep()
+                }, 1000);
             }
 
             else {
@@ -273,9 +275,8 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
                     audioList.bodyAudio2.play();
                     timerList[2] = setTimeout(() => {
                         startRepeatAudio()
-                        // audioList.commonAudio1.play();
                     }, audioList.bodyAudio2.duration * 1000 + 300);
-                }, 1500);
+                }, 2000);
             }
         }
         else {
@@ -317,13 +318,13 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
                             top: '0%',
                             pointerEvents: 'none'
                         }}
-                    className={index == 0 ? '' : 'hideObject'}
+                        className={index == 0 ? '' : 'hideObject'}
                     >
 
                         <BaseImage
                             scale={0.22}
                             posInfo={{
-                                l: (posInfoList[index].x ) / 100 + [0.00, 0.035, 0.04, 0.01][index],
+                                l: (posInfoList[index].x) / 100 + [0.00, 0.035, 0.04, 0.01][index],
                                 b: 0.1
                             }}
                             ref={textRefList[index]}

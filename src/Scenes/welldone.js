@@ -14,14 +14,6 @@ const Scene = React.forwardRef(({ nextFunc, loadFunc, _baseGeo }, ref) => {
     const parentRef = useRef()
     const spakleRef = useRef()
 
-    useEffect(() => {
-
-        return () => {
-
-        }
-    }, [])
-
-
 
     React.useImperativeHandle(ref, () => ({
         sceneLoad: () => {
@@ -46,7 +38,7 @@ const Scene = React.forwardRef(({ nextFunc, loadFunc, _baseGeo }, ref) => {
 
             timerList[1] = setTimeout(() => {
                 nextFunc();
-            }, 10000);
+            }, 11000);
         },
         sceneEnd: () => {
             audioList.clapAudio.pause();
