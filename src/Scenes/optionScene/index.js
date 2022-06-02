@@ -230,12 +230,28 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
         answerList = []
         let needLength = optionGroup[stepCount];
 
-        while (answerList.length != needLength) {
-            let randomNumber = Math.floor(Math.random() * needLength);
-            if (!answerList.includes(doneCount + randomNumber)) {
-                answerList.push(doneCount + randomNumber)
-            }
-        }
+
+        const defaultRandomList = [
+            [
+                [1, 0]
+            ],
+            [
+                [2, 0, 1], [1, 2, 0]
+            ],
+            [
+                [3, 2, 1, 0], [3, 2, 0, 1],
+                [1, 0, 3, 2], [1, 0, 2, 3],
+                [2, 3, 1, 0], [2, 3, 0, 1]
+            ]
+        ]
+
+        let currentNum = needLength - 2
+
+        let randomNumber = Math.floor(Math.random() * defaultRandomList[currentNum].length);
+
+        defaultRandomList[currentNum][randomNumber].map(value => {
+            answerList.push(value + doneCount)
+        })
     }
 
     if (answerList.length == 0)

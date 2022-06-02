@@ -13,6 +13,7 @@ export default function Scene18({ nextFunc, _geo, _baseGeo }) {
     const replayBtn = useRef()
     useEffect(() => {
 
+        audioList.bodyAudio1.src = prePathUrl() + "sounds/effect/excellent.mp3"
         setRepeatAudio(audioList.replayAudio)
 
         timerList[0] = setTimeout(() => {
@@ -22,13 +23,15 @@ export default function Scene18({ nextFunc, _geo, _baseGeo }) {
             audioList.yeahAudio.pause();
             audioList.yeahAudio.currentTime = 0;
 
+            audioList.bodyAudio1.play();
+        }, 2000);
+
+        timerList[4] = setTimeout(() => {
             audioList.clapAudio.play().catch(error => { }).catch(error => { })
             audioList.yeahAudio.play().catch(error => { }).catch(error => { })
-        }, 1500);
-
-        timerList[2] = setTimeout(() => {
             replayBtn.current.className = 'aniObject'
-        }, 3000);
+        }, 4000);
+
 
         timerList[1] = setTimeout(() => {
             audioList.backAudio.volume = 0.04;
@@ -40,13 +43,13 @@ export default function Scene18({ nextFunc, _geo, _baseGeo }) {
             audioList.replayAudio.play().catch(error => { });
             startRepeatAudio()
 
-            timerList[2] = setTimeout(() => {
+            timerList[3] = setTimeout(() => {
                 audioList.backAudio.volume = 0.08;
                 audioList.yeahAudio.volume = 0.4
                 audioList.clapAudio.volume = 0.8
 
             }, audioList.replayAudio.duration * 1000);
-        }, 4000);
+        }, 7500);
 
         return () => {
 
