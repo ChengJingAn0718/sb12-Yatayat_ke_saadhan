@@ -18,20 +18,19 @@ let doneCount = 0
 
 
 const posInfoList = [
-    { f: '1', wN: '1', x: 4 },
-    { f: '1', wN: '2', x: 29 },
-    { f: '1', wN: '3', x: 54 },
-    { f: '1', wN: '4', x: 79 },
+    { f: '1', wN: '1', x: 10 },
+    { f: '1', wN: '2', x: 42 },
+    { f: '1', wN: '3', x: 72 },
 
 ]
 
 
 let stepCount = 0;
-let optionGroup = [4]
+let optionGroup = [3]
 
 
 const iconMovePosList = [
-    [7, 35, 61, 83],
+    [12, 48, 79],
 ]
 
 let timerList = []
@@ -53,7 +52,7 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
     const [isShowLastPart, setShowLastPart] = useState(false)
 
     useEffect(() => {
-        setPositionFomart()
+
 
         return () => {
             answerList = []
@@ -89,6 +88,8 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
         },
         startGame: () => {
 
+            setPositionFomart()
+
             audioList.bodyAudio1.src = getAudioPath('option/' + (stepCount + 1) + '/q')
             audioList.bodyAudio2.src = getAudioPath('option/' + (stepCount + 1) + '/1')
 
@@ -96,6 +97,7 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
             setPrimaryAudio(audioList.bodyAudio2)
             setRepeatAudio(audioList.commonAudio1)
             setRepeatType(1)
+
 
             timerList[0] = setTimeout(() => {
                 audioList.bodyAudio1.play();
@@ -139,7 +141,10 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
 
         for (let i = 0; i < answerList.length; i++) {
             clickRefList[doneCount + i].current.style.left =
-                posInfoList[answerList[i]].x + '%'
+                posInfoList[answerList[i]].x 
+                // + [3, 6, 7.5][answerList[i]] 
+                + '%'
+
             clickRefList[doneCount + i].current.style.transition = '0s'
         }
     }
@@ -322,7 +327,6 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
                 posInfoList.map((value, index) =>
                     (isShowLastPart || index < optionGroup[0]) &&
 
-
                     <div
                         key={index}
                         ref={itemRefList[index]}
@@ -334,7 +338,7 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
                             top: '0%',
                             pointerEvents: 'none'
                         }}
-                        className={index == 0 ? '' : 'hideObject'}
+                    className={index == 0 ? '' : 'hideObject'}
                     >
 
                         <BaseImage
@@ -366,7 +370,7 @@ const OptionScene = React.forwardRef(({ nextFunc, transSignaler, _geo, continueS
                             width: 17 + '%',
                             height: 30 + '%',
                             borderRadius: '50%',
-                            left: posInfoList[index].x + 0 + '%',
+                            left: posInfoList[index].x + '%',
                             top: '16%',
                             cursor: 'pointer',
                         }}>

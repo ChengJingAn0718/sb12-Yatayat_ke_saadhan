@@ -18,25 +18,22 @@ const maskPathList = [
     ['12'],
     ['sub'],
     ['16'],
-    ['sub'],
+    ['17'],
 ]
 
 const maskTransformList = [
     { x: 0.1, y: 0.2, s: 2 },
-    { x: 0.15, y: 0.2, s: 2 },
-    { x: 0.2, y: 0.3, s: 2.2 },
+    { x: 0.1, y: 0.2, s: 2 },
+    { x: 0.1, y: 0.2, s: 2 },
     { x: 0.4, y: 0.3, s: 1.8 },
     { x: 0.3, y: 0.3, s: 2 },
     { x: 0.2, y: -0.2, s: 1.4 },
     { x: 0.1, y: 0.4, s: 1.8 },
     { x: 0.2, y: 0.5, s: 2 },
-
     { x: -0.4, y: 0.5, s: 2 }, //police
     { x: -0.2, y: -0.05, s: 1.4 },
-
     { x: -0.3, y: -0.1, s: 1.6 },
-
-    { x: -0.5, y: 0.6, s: 2.2 },
+    { x: -0.65, y: 0.65, s: 2.3 },
 ]
 
 let currentMaskNum = 0;
@@ -55,8 +52,7 @@ const marginPosList = [
     { s: 2, l: -0.4, t: 0.3 }, //police
     { s: 2, l: 0.5, t: 0.3 },
     { s: 3, l: -0.7, t: -0.3 },
-
-    { s: 2, l: 0.45, t: 0.1 },
+    { s: 2, l: -0.45, t: 0.8 },
 ]
 
 const audioPathList = [
@@ -131,7 +127,6 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
 
             blackWhiteObject.current.style.transition = "0.5s"
             currentImage.current.style.transition = '0.5s'
-
 
             setTimeout(() => {
                 audioList.bodyAudio2.play()
