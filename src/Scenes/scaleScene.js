@@ -128,6 +128,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
             blackWhiteObject.current.style.transition = "0.5s"
             currentImage.current.style.transition = '0.5s'
 
+            // nextFunc()
             setTimeout(() => {
                 audioList.bodyAudio2.play()
                 setSubMaskLoaded(true)
