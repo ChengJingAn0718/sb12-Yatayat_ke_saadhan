@@ -17,6 +17,8 @@ export default function Scene18({ nextFunc, _geo, _baseGeo }) {
         setRepeatAudio(audioList.replayAudio)
         setRepeatType(2)
 
+        setExtraVolume(audioList.replayAudio, 2)
+
         timerList[0] = setTimeout(() => {
             audioList.clapAudio.pause();
             audioList.clapAudio.currentTime = 0;

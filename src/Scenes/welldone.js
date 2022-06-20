@@ -21,8 +21,8 @@ const Scene = React.forwardRef(({ nextFunc, loadFunc, _baseGeo }, ref) => {
         },
         sceneStart: () => {
 
-            setExtraVolume(audioList.bodyAudio1, 2)
-            setExtraVolume(audioList.bodyAudio2, 2)
+            setExtraVolume(audioList.bodyAudio1, 4)
+            setExtraVolume(audioList.bodyAudio2, 4)
 
             parentRef.current.className = 'aniObject'
             spakleRef.current.className = 'excellentText'
