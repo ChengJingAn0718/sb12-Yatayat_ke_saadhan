@@ -91,7 +91,6 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
             setRepeatType(2)
 
             audioList.bodyAudio1.src = prePathUrl() + "sounds/main/common/review0.mp3"
-            audioList.bodyAudio2.src = prePathUrl() + "sounds/main/common/review1.mp3"
 
             imageCount = 0;
             isEffectPassed = true;
@@ -99,10 +98,9 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
             clickedList = []
 
             setRepeatAudio(audioList.commonAudio3)
-            setExtraVolume(audioList.commonAudio3, 2)
+            setExtraVolume(audioList.commonAudio3, 4)
 
-            for (let i = 0; i < 18; i++)
-                setExtraVolume(audioList[i], 2)
+
 
             baseObject.current.className = 'aniObject'
 
@@ -219,7 +217,11 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
 
         clickedList.push(index)
 
-        audioList[index].play();
+        setExtraVolume(audioList[index], 4)
+        setTimeout(() => {
+            audioList[index].play();
+        }, 50);
+
         if (clickedList.length == doneCount + wordGround[stepCount]) {
             setTimeout(() => {
                 if (stepCount != wordGround.length - 1)

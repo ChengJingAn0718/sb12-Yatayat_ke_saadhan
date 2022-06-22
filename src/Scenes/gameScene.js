@@ -42,7 +42,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
     useEffect(() => {
 
         setRepeatType(1)
-        
+
         return () => {
             stepCount = 0;
             totalStep = 0
@@ -56,12 +56,12 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
             setSceneLoad(true)
         },
         sceneStart: () => {
-            setExtraVolume(audioList.bodyAudio1, 5)
-            setExtraVolume(audioList.bodyAudio2, 5)
+            setExtraVolume(audioList.bodyAudio1, 7)
+            setExtraVolume(audioList.bodyAudio2, 7)
 
-            setExtraVolume(audioList.commonAudio2, 2)
-            setExtraVolume(audioList.commonAudio1, 2)
-            
+            setExtraVolume(audioList.commonAudio2, 4)
+            setExtraVolume(audioList.commonAudio1, 4)
+
             parentRef.current.className = 'aniObject'
             startFirstPart()
             loadFunc()
@@ -97,13 +97,17 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
 
     const showControlFunc = () => {
 
-        blackWhiteObject.current.style.WebkitMaskImage = 'url("' + prePathUrl() + 'images/question/' + (stepCount + 2) + '/m.png")'
-
-        if (stepCount < questionPartCount - 1)
+        if (stepCount < questionPartCount - 1) {
+            blackWhiteObject.current.style.WebkitMaskImage = 'url("' + prePathUrl() + 'images/question/' + (stepCount + 2) + '/m.png")'
             aniImageList.map((image, index) => {
                 if (index < 3)
                     image.current.setUrl('question/' + (stepCount + 2) + '/' + (index + 1) + '.png')
             })
+
+        }
+
+
+
 
 
         timerList[2] = setTimeout(() => {
@@ -437,7 +441,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
                                                 top: '-32%'
                                             }}
                                             draggable={false}
-                                            src={prePathUrl() + 'images/Buttons/Answer_Button.svg'}
+                                            src={prePathUrl() + 'images/buttons/answer_button.svg'}
                                         />
                                     </div>
                                 </div>

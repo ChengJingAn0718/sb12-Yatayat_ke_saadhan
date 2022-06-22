@@ -116,7 +116,7 @@ const MusicButton = React.forwardRef((prop, ref) => {
                 draggable={false}
 
                 width={"100%"}
-                src={prePathUrl() + "images/Buttons/" + (_isBackSoundPlaying ? "Audio_unmute" : "Audio_mute") + ".svg"}
+                src={prePathUrl() + "images/buttons/" + (_isBackSoundPlaying ? "audio_unmute" : "audio_mute") + ".svg"}
             />
         </div>
     )
@@ -139,7 +139,7 @@ const LoadingCircleBar = React.forwardRef((prop, ref) => {
         >
             <img
                 style={{ position: 'absolute', width: '10%', top: '40%', left: '45%' }}
-                src={prePathUrl() + "images/Buttons/loadingBar.gif"}
+                src={prePathUrl() + "images/buttons/loadingbar.gif"}
             />
         </div>
     )

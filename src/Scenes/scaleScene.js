@@ -130,10 +130,8 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
 
             // nextFunc()
 
-            setExtraVolume(audioList.bodyAudio1, 2)
-            setExtraVolume(audioList.bodyAudio2, 2)
-
-
+            setExtraVolume(audioList.bodyAudio1, 4)
+            setExtraVolume(audioList.bodyAudio2, 4)
 
             setTimeout(() => {
                 audioList.bodyAudio2.play()
@@ -373,16 +371,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
                                 url={'bg/base.png'}
                             />
 
-                            {/* {
-                        outLineRefList.map(
-                            (value, index) =>
-                                <BaseImage
-                                    className='hideObject'
-                                    ref={outLineRefList[index]}
-                                />
-                        )
-
-                    } */}
+                       
 
                         </div>
                     </div>

@@ -17,7 +17,7 @@ export default function Scene18({ nextFunc, _geo, _baseGeo }) {
         setRepeatAudio(audioList.replayAudio)
         setRepeatType(2)
 
-        setExtraVolume(audioList.replayAudio, 2)
+        setExtraVolume(audioList.replayAudio, 3)
 
         timerList[0] = setTimeout(() => {
             audioList.clapAudio.pause();
@@ -130,7 +130,7 @@ export default function Scene18({ nextFunc, _geo, _baseGeo }) {
 
                         width={"100%"}
                         draggable={false}
-                        src={prePathUrl() + 'images/Buttons/Replay_Blue.svg'}
+                        src={prePathUrl() + 'images/buttons/replay_blue.svg'}
                     />
                 </div>
             </div>
