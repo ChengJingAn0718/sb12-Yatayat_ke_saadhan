@@ -24,14 +24,14 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc }, ref) => {
         },
         sceneStart: () => {
             audioList.bodyAudio1.src = getAudioPath('common/middle')
-            setExtraVolume(audioList.bodyAudio1, 2)
+            setExtraVolume(audioList.bodyAudio1, 3)
 
 
-            setExtraVolume(audioList.clapAudio, 2)
-            setExtraVolume(audioList.successAudio, 2)
-            setExtraVolume(audioList.tingAudio, 2)
-            setExtraVolume(audioList.buzzAudio, 2)
-            setExtraVolume(audioList.yeahAudio, 2)
+            setExtraVolume(audioList.clapAudio, 2.5)
+            setExtraVolume(audioList.successAudio, 2.5)
+            setExtraVolume(audioList.tingAudio, 2.5)
+            setExtraVolume(audioList.buzzAudio, 2.5)
+            setExtraVolume(audioList.yeahAudio, 2.5)
 
             parentRef.current.className = 'aniObject'
             spakleRef.current.className = 'excellentText'

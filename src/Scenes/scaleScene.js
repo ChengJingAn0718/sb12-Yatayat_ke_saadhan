@@ -130,8 +130,10 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
 
             // nextFunc()
 
-            setExtraVolume(audioList.bodyAudio1, 4)
-            setExtraVolume(audioList.bodyAudio2, 4)
+            // 4 to 6
+
+            setExtraVolume(audioList.bodyAudio1, 6)
+            setExtraVolume(audioList.bodyAudio2, 6)
 
             setTimeout(() => {
                 audioList.bodyAudio2.play()
@@ -160,7 +162,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
         if (currentMaskNum == 0)
             loadFunc()
         blackWhiteObject.current.className = 'hideObject'
-        let currentMaskName = maskPathList[currentMaskNum]
+        let currentMaskName = maskPathList[currentMaskNum][0]
 
         baseObject.current.style.transition = durationList[currentMaskNum] + 's'
 
@@ -288,7 +290,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
 
                                 currentMaskNum++;
 
-                                currentMaskName = maskPathList[currentMaskNum]
+                                currentMaskName = maskPathList[currentMaskNum][0]
                                 if (currentMaskName != 'sub')
                                     blackWhiteObject.current.style.WebkitMaskImage = 'url("' +
                                         returnImgPath(maskPathList[currentMaskNum], true) + '")'
@@ -351,7 +353,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
                             left: '0%',
                             top: '0%',
                             WebkitMaskImage: 'url("' +
-                                returnImgPath(maskPathList[2][0], true)
+                                returnImgPath(maskPathList[0][0], true)
                                 + '")',
                             WebkitMaskSize: '100% 100%',
                             WebkitMaskRepeat: "no-repeat"

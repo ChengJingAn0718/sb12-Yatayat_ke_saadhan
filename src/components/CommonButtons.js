@@ -56,7 +56,7 @@ const FullScreenBtn = React.forwardRef((prop, ref) => {
             }}>
             <img draggable={false} onClick={() => { setTimeout(screenControlFunc, 200) }}
                 width={"100%"}
-                src={prePathUrl() + "images/Buttons/" + (!isFullScreen ? "fullscreen-svgrepo-com" : "exit-full-screen-svgrepo-com") + ".svg"}
+                src={prePathUrl() + "images/buttons/" + (!isFullScreen ? "fullscreen-svgrepo-com" : "exit-full-screen-svgrepo-com") + ".svg"}
             />
         </div>
     )
@@ -70,6 +70,7 @@ const MusicButton = React.forwardRef((prop, ref) => {
         if (_isBackSoundPlaying) {
             _setBackgroundPlaying(false);
             prop.backAudio.pause();
+            setExtraVolume(prop.backAudio, 0.9)
         }
         else {
             _setBackgroundPlaying(true);
@@ -85,7 +86,7 @@ const MusicButton = React.forwardRef((prop, ref) => {
                 prop.backAudio.play().catch(error => { });
 
                 setExtraVolume(prop.backAudio, 1.5)
-                
+
                 _setBackgroundPlaying(true);
 
             }, 500);

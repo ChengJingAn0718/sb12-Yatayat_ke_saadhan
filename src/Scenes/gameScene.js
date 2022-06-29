@@ -56,11 +56,11 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
             setSceneLoad(true)
         },
         sceneStart: () => {
-            setExtraVolume(audioList.bodyAudio1, 7)
-            setExtraVolume(audioList.bodyAudio2, 7)
+            setExtraVolume(audioList.bodyAudio1, 10.5)
+            setExtraVolume(audioList.bodyAudio2, 10.5)
 
-            setExtraVolume(audioList.commonAudio2, 4)
-            setExtraVolume(audioList.commonAudio1, 4)
+            setExtraVolume(audioList.commonAudio2, 6)
+            setExtraVolume(audioList.commonAudio1, 6)
 
             parentRef.current.className = 'aniObject'
             startFirstPart()
