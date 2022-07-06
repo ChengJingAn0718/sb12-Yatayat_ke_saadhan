@@ -35,7 +35,7 @@ const App = React.forwardRef(({ geo, _startTransition, baseGeo, bgLoaded }, ref)
       musicRef.current.className = 'hideObject'
 
       sceneList[1].current.sceneLoad()
-      sceneList[0].current.sceneLoad()
+       sceneList[0].current.sceneLoad()
 
 
 
